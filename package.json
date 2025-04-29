@@ -1,15 +1,17 @@
 {
-  "name": "uoc-boilerplate",
-  "version": "3.11.0",
+  "name": "uoc-ehc2-pac2",
+  "version": "1.0.0",
   "private": true,
-  "description": "Boilerplate for Advanced HTML/CSS Tools UOC students",
+  "description": "Vanilla website made with SASS and Bootstrap, bundled with Parcel.",
   "scripts": {
-    "parcel:serve": "parcel -p 8123 --target web --open",
-    "parcel:build": "parcel build --target web --no-source-maps --no-cache",
+    "start": "npm-run-all clean parcel:serve",
+    "build": "npm-run-all clean format lint parcel:build",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
-    "dev": "npm-run-all clean parcel:serve",
-    "build": "npm-run-all clean parcel:build",
-    "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'"
+    "parcel:serve": "parcel serve src/index.html --public-url / --dist-dir dist",
+    "parcel:build": "parcel build --target web --no-source-maps --no-cache",
+    "format": "prettier --write src/**/*.scss",
+    "lint": "stylelint src/**/*.scss",
+    "flint": "npm-run-all format lint"
   },
   "targets": {
     "web": {
@@ -23,17 +25,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uoc-advanced-html-css/uoc-boilerplate.git"
+    "url": "git+https://github.com/isaacBejarano/uoc-ehc2-pac2.git"
   },
   "author": {
-    "name": "Jordi Tarrida",
-    "email": "jorditarrida@uoc.edu"
+    "name": "Isaac Bejarano",
+    "email": "undefined"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues"
+    "url": "https://github.com/isaacBejarano/uoc-ehc2-pac2/issues"
   },
-  "homepage": "https://github.com/uoc-advanced-html-css/uoc-boilerplate#readme",
+  "homepage": "https://github.com/isaacBejarano/uoc-ehc2-pac2#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.3",
     "autoprefixer": "^10.4.20",
@@ -41,7 +43,19 @@
     "parcel": "^2.13.3",
     "postcss-preset-env": "^10.1.3",
     "posthtml-include": "^2.0.1",
+    "prettier": "3.5.3",
     "rimraf": "^6.0.1",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "stylelint": "^16.19.1",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-scss": "^6.11.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.5"
   }
 }
