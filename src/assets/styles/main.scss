@@ -1,25 +1,80 @@
+// From lowest (left) to highest priority (right)
+@layer
+	layouts,
+	bootstrap,
+	// skins,
+	globals,
+	reset,
+	vars,
+	font-face;
+
 /**
  * Use this file to import partials.
  * Do not include SCSS code in this file.
  */
+
 /**
  * Import variables
  */
-@import "variables";
+@import url("./_font-face.scss") layer(font-face);
+@import url("./_variables.scss") layer(vars);
+@import url("./_reset.scss") layer(reset);
+@import url("./_globals.scss") layer(globals);
+
 /**
- * Import npm dependencies
- * see: https://v2.parceljs.org/features/module-resolution/
- * see commented examples below
- */
-// @import "some-node-module";
-// @import "@some-company/some-node-module";
-@import "bootstrap/scss/bootstrap";
-// TODO: import individual
+* Import npm dependencies
+* see: https://v2.parceljs.org/features/module-resolution/
+*/
+
+@layer bootstrap {
+	// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+	@import "../../../node_modules/bootstrap/scss/functions";
+	
+	// 2. Include any default variable overrides here
+	@import "b5-customization";
+	
+	// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+	@import "../../../node_modules/bootstrap/scss/variables";
+	@import "../../../node_modules/bootstrap/scss/variables-dark";
+	
+	// 4. Include any default map overrides here
+	
+	// 5. Include remainder of required parts
+	@import "../../../node_modules/bootstrap/scss/maps";
+	@import "../../../node_modules/bootstrap/scss/mixins";
+	@import "../../../node_modules/bootstrap/scss/root";
+	
+	// 6. Optionally include any other parts as needed
+	@import "../../../node_modules/bootstrap/scss/utilities";
+	@import "../../../node_modules/bootstrap/scss/reboot";
+	@import "../../../node_modules/bootstrap/scss/type";
+	@import "../../../node_modules/bootstrap/scss/images"; // TODO: use it (kmg + figure)
+	@import "../../../node_modules/bootstrap/scss/containers";
+	@import "../../../node_modules/bootstrap/scss/grid";
+	@import "../../../node_modules/bootstrap/scss/helpers";
+	// more UI components
+	@import "../../../node_modules/bootstrap/scss/buttons"; // TODO: use it
+	@import "../../../node_modules/bootstrap/scss/button-group";
+	@import "../../../node_modules/bootstrap/scss/card"; // TODO: use it
+	@import "../../../node_modules/bootstrap/scss/nav"; // TODO: use it
+	@import "../../../node_modules/bootstrap/scss/navbar"; // TODO: use it
+	@import "../../../node_modules/bootstrap/scss/list-group"; // TODO: use it
+	
+	// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+	@import "../../../node_modules/bootstrap/scss/utilities/api";
+	
+	// 8. Add additional custom code here
+}
+
 /**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
-@import "layouts/home";
+
+//  @layer layouts {
+// 	@import "./layouts/home";
+//  }
+
 /**
  * Do NOT include anything else in this file!
  */

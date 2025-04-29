@@ -1,0 +1,42 @@
+@use "./variables" as vars;
+
+////
+// GLOBALS
+////
+
+// Body
+////
+
+body > * {
+  // text
+  font-family: vars.$font-primary;
+}
+
+// Headings
+////
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: vars.$font-secondary;
+}
+
+// Paragraph
+////
+
+p {
+  line-height: 1.5;
+}
+
+// Layout
+////
+
+// Fixed-bottom element (liek footer) --> substract height of collapsible Virtual Keyboard UI in mobile
+.box-bottom {
+	position: fixed;
+  bottom: 0;
+  margin-bottom: calc(20px + env(keyboard-inset-height))
+}

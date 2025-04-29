@@ -1,0 +1,11 @@
+@use "./variables" as vars;
+
+////
+// BOOTSTRAP VARIABLE CUSTOMIZATION
+////
+
+// Colors
+////
+
+$primary: vars.$color-primary;
+$secondary: vars.$color-accent;

@@ -1,0 +1,26 @@
+////
+// RESET
+////
+
+// Box Sizing --> already loaded by Bootstrap Reboot
+////
+
+// Body
+////
+
+// avoid scrollbar-y affecting viewport width
+body {
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+// Tables
+////
+
+// FIXME: fix ugly user agent styles
+// table {
+//   width: 100%;
+//   table-layout: fixed;
+//   border-collapse: collapse;
+// }
+
