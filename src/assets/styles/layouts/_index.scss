@@ -1,167 +1,170 @@
+@use 'sass:color';
+
 .pg-index {
-$main: #fff;
-$accent: #fe320f;
-$text: #282828;
+  $main: lch(100% 0.01 296.81);
+  $accent: lch(55.47% 97.52 41.46);
+  $text: lch(16.11% 0 296.81);
 
+  // Basic styles and layout
+  main {
+    position: relative;
+    max-width: 45em;
+    padding: 1em;
+    margin: 0 auto;
+  }
 
-// Basic styles and layout
-main {
-  max-width: 45em;
-  margin: 0 auto;
-  position: relative;
-  padding: 1em;
-}
+  :-ms-input-placeholder,
+  :root main {
+    display: block;
+  }
 
-_:-ms-input-placeholder, :root main {
-  display: block;
-}
+  h1 {
+    margin-bottom: 0.25em;
+    font-family: inherit;
+    font-size: calc(3em + 7vw);
+    color: lch(53.23% 104.58 40);
+  }
 
-h1 {
-  font-family: $header-font;
-  color: $accent;
-  font-size: calc(3em + 7vw);
-  margin-bottom: 0.25em;
-}
+  h2 {
+    margin-bottom: 1em;
+    font-size: calc(1em + 0.5vw);
+    color: lch(29.78% 69.33 328.23);
+    text-transform: uppercase;
+  }
 
-h2 {
-  text-transform: uppercase;
-  font-size: calc(1em + 0.5vw);
-  color: lighten($text, 50%);
-  margin-bottom: 1em;
-}
+  hr {
+    opacity: 0;
+  }
 
-hr {
-  opacity: 0;
-}
+  .about {
+    margin-bottom: 1em;
+    line-height: 1.3;
+  }
 
-.about {
-  line-height: 1.3;
-  margin-bottom: 1em;
-}
+  a {
+    display: block;
+    margin-bottom: 2em;
+    font-weight: bold;
+    color: $text;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 
-a {
-  display: block;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $text;
-  margin-bottom: 2em;
-  font-weight: bold;
-}
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .location {
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
 
-.location {
-  text-transform: uppercase;
-  line-height: 1.5;
-  font-weight: bold;
-}
+  button {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    padding: 1em 2em;
+    font-size: 100%;
+    color: $main;
+    text-transform: uppercase;
+    background-color: $accent;
+    border: 0;
+  }
 
-button {
-  border: 0;
-  background-color: $accent;
-  color: $main;
-  text-transform: uppercase;
-  font-size: 100%;
-  padding: 1em 2em;
-  position: absolute;
-  right: 1em;
-  bottom: 1em;
-}
+  // Grid layout for wide display
+  @supports (display: grid) {
+    @media (min-width: 42em) and (min-height: 27em) {
+      main {
+        display: grid;
+        grid-template-rows: 35vh 40vh 15vh 10vh;
+        grid-template-columns:
+          2fr minmax(10em, max-content) minmax(14em, max-content)
+          minmax(1em, 1fr) fit-content(28em) calc(2em + 0.5vw);
+        max-width: none;
+        padding: 0;
+      }
 
-// Grid layout for wide display
-@supports (display:grid) {
-  @media (min-width: 42em) and (min-height: 27em) {
-    main {
-      max-width: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: 2fr minmax(10em, max-content) minmax(14em, max-content) minmax(1em, 1fr) fit-content(28em) calc(2em + 0.5vw);
-      grid-template-rows: 35vh 40vh 15vh 10vh;
-    }
+      h1 {
+        z-index: 2;
+        grid-row: 1 / 2;
+        grid-column: 3 / 6;
+        padding-left: 0.25em;
+        margin-bottom: initial;
+      }
 
-    h1 {
-      grid-column: 3 / 6;
-      grid-row: 1 / 2;
-      z-index: 2;
-      padding-left: 0.25em;
-      margin-bottom: initial;
-    }
+      h2 {
+        grid-row: 1 / -1;
+        grid-column: 6 / 7;
+        margin-bottom: initial;
+        color: $text;
+        writing-mode: vertical-rl;
+      }
 
-    h2 {
-      grid-row: 1 / -1;
-      grid-column: 6 / 7;
-      writing-mode: vertical-rl;
-      margin-bottom: initial;
-      color: $text;
-    }
+      hr {
+        grid-row: 2;
+        grid-column: 5 / 6;
+        width: 20ch;
+        height: 6px;
+        background-color: $text;
+      }
 
-    hr {
-      grid-column: 5 / 6;
-      grid-row: 2;
-      height: 6px;
-      background-color: $text;
-      width: 20ch;
-    }
+      .about {
+        grid-row: 2;
+        grid-column: 5 / 6;
+        align-self: end;
+        padding-bottom: 4vh;
+        margin-bottom: initial;
+      }
 
-    .about {
-      grid-column: 5 / 6;
-      grid-row: 2;
-      align-self: end;
-      padding-bottom: 4vh;
-      margin-bottom: initial;
-    }
+      a {
+        grid-column: 5 / 6;
+        align-self: center;
+        justify-self: end;
+        margin-bottom: initial;
 
-    a {
-      grid-column: 5 / 6;
-      justify-self: end;
-      align-self: center;
-      margin-bottom: initial;
+        &::before {
+          display: block;
+          width: 4ch;
+          height: 4px;
+          margin-bottom: 1em;
+          content: "";
+          background-color: $accent;
+        }
+      }
 
-      &::before {
-        content: '';
-        display: block;
-        height: 4px;
-        background-color: $accent;
-        width: 4ch;
-        margin-bottom: 1em;
+      img {
+        grid-row: 1 / 4;
+        grid-column: 1 / 4;
+      }
+
+      .location {
+        z-index: 2;
+        display: flex;
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+        text-align: center;
+        background: $main;
+
+        p {
+          margin: auto;
+        }
+      }
+
+      button {
+        position: initial;
+        grid-row: 4 / 5;
+        grid-column: 2 / 3;
+        padding: 0;
       }
     }
 
-    img {
-      grid-column: 1 / 4;
-      grid-row: 1 / 4;
-    }
-
-    .location {
-      grid-column: 3 / 4;
-      grid-row: 3 / 4;
-      z-index: 2;
-      background: $main;
-      text-align: center;
-      display: flex;
-
-      p {
-        margin: auto;
+    @media (min-width: 48em) and (min-height: 27em) {
+      hr {
+        opacity: 1;
       }
     }
-
-    button {
-      grid-column: 2 / 3;
-      grid-row: 4 / 5;
-      position: initial;
-      padding: 0;
-    }
   }
-
-  @media (min-width: 48em) and (min-height: 27em) {
-    hr {
-      opacity: 1;
-    }
-  }
-}
-
 }
