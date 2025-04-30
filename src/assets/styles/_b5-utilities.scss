@@ -26,7 +26,7 @@ $utilities: map.merge(
   (
     // e.g. text-purple-500
     "color": map.merge(
-      map.get($utilities, "color"),
+        map.get($utilities, "color"),
         (
           values: map.merge(
               map.get(map.get($utilities, "color"), "values"),
