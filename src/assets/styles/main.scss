@@ -1,12 +1,5 @@
 // From lowest (left) to highest priority (right)
-@layer
-	layouts,
-	bootstrap,
-	// skins,
-	globals,
-	reset,
-	vars,
-	font-face;
+@layer layouts,	icons, bootstrap, globals, reset,	vars,	font-face;
 
 /**
  * Use this file to import partials.
@@ -31,14 +24,14 @@
 	@import "../../../node_modules/bootstrap/scss/functions";
 	
 	// 2. Include any default variable overrides here
-	@import "b5-customization";
 	
 	// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 	@import "../../../node_modules/bootstrap/scss/variables";
 	@import "../../../node_modules/bootstrap/scss/variables-dark";
 	
 	// 4. Include any default map overrides here
-	
+	@import "b5-override-vars";
+
 	// 5. Include remainder of required parts
 	@import "../../../node_modules/bootstrap/scss/maps";
 	@import "../../../node_modules/bootstrap/scss/mixins";
@@ -48,7 +41,7 @@
 	@import "../../../node_modules/bootstrap/scss/utilities";
 	@import "../../../node_modules/bootstrap/scss/reboot";
 	@import "../../../node_modules/bootstrap/scss/type";
-	@import "../../../node_modules/bootstrap/scss/images"; // TODO: use it (kmg + figure)
+	@import "../../../node_modules/bootstrap/scss/images";
 	@import "../../../node_modules/bootstrap/scss/containers";
 	@import "../../../node_modules/bootstrap/scss/grid";
 	@import "../../../node_modules/bootstrap/scss/helpers";
@@ -59,21 +52,29 @@
 	@import "../../../node_modules/bootstrap/scss/nav"; // TODO: use it
 	@import "../../../node_modules/bootstrap/scss/navbar"; // TODO: use it
 	@import "../../../node_modules/bootstrap/scss/list-group"; // TODO: use it
+	@import "../../../node_modules/bootstrap/scss/transitions"; 
+	@import "../../../node_modules/bootstrap/scss/transitions"; // TODO: use it
 	
+	// generate utilities
+	@import "b5-utilities";
+
 	// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 	@import "../../../node_modules/bootstrap/scss/utilities/api";
 	
 	// 8. Add additional custom code here
+	@import "b5-overrides";
 }
+
+@import url("../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css") layer(icons);
 
 /**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
 
-//  @layer layouts {
-// 	@import "./layouts/home";
-//  }
+ @layer layouts {
+	@import "./layouts/index";
+ }
 
 /**
  * Do NOT include anything else in this file!

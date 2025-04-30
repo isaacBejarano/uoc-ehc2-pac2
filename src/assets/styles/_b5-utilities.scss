@@ -1,0 +1,50 @@
+@use "./variables" as vars;
+
+////
+// BOOTSTRAP UTILITY CUSTOMIZATION
+////
+
+// Colors
+////
+
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    // e.g. text-purple-500
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $all-colors
+          ),
+        ),
+      ),
+    ),
+    // e.g. bg-purple-500
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          $all-colors
+        )
+      )
+    ),
+    // e.g. border-blue-500
+    "border-color": map-merge(
+      map-get($utilities, "border-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "border-color"), "values"),
+          $all-colors
+        )
+      )
+    )
+  )
+);
+
+

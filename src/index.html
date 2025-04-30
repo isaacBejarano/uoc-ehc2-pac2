@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="ca">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
-  <!-- do not remove this line! -->
-  <title>UOC Boilerplate</title>
+  <include src="./views/head-base.html"></include>
 </head>
 
-<body>
-  <div class="container py-4 px-3 mx-auto">
-    <h1 class="text-primary">Hello, Bootstrap and Parcel!</h1>
-    <button class="btn btn-secondary">Primary button</button>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur in eveniet laboriosam, commodi natus deserunt minus nulla vel cumque assumenda quod accusantium error tempore rem? Repellendus temporibus consequuntur veritatis deserunt?
-    </p>
+<body class="pg-index text-blue-600">
+  <include src="./views/header.html"></include>
+
+  <!-- Mira tu pregunta en el FORO: Te contestó Julián? -->
+
+    <!-- <main class="container-fluid grid text-center">
+      <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+      <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+      <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
+    </main> -->
+
+    <main>
+      <h1>Tycho</h1>
+      <h2>Artist Spotlight</h2>
+      <hr>
+      <p class="about">Tycho is an American ambient music project led by Scott Hansen as primary composer, songwriter and producer. Hailing from San Francisco, California, he is known as ISO50 for his photographic and design works. His music is a combination of downtempo
+    vintage-style synthesizers and ambient melodies.</p>
+  <a href="javascript:void(0)">Read more</a>
+  <img src="https://www.chenhuijing.com/demos/grids-tycho/img/tycho-band.jpg" alt="Tycho Live at Toronto">
+  <div class="location">
+    <p>10.2.2010 Toronto<br>The Drake Hotel</p>
   </div>
+  <button type="button">Tour dates</button>
+</main>
+
+
+
   <include src="./views/footer.html"></include>
 </body>
-<script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
 
+<!-- do not remove this line! -->
+<script type="module" src="./assets/scripts/main.js"></script>
 </html>

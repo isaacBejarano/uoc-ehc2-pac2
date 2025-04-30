@@ -1,3 +1,42 @@
-<footer class="uoc-footer">
-  &copy; Universitat Oberta de Catalunya
+<footer class="fixed-bottom"> 
+  <mark>Contact</mark>
+
+  <div class="container-lg nav justify-content-around align-items-center border-top border-2 border-blue-100">
+    <p class="nav-item h4 fw-bold">
+      <include src="./views/logo.html"></include>   
+    </p>  
+    
+    <ul class="nav justify-content-center">    
+      <include src="./views/nav-home.html"></include>  
+      <include src="./views/nav-items.html"></include>  
+    </ul>
+
+    <nav class="nav">
+      <button type="button" class="btn btn-link">
+        <i class="bi bi-google"></i>
+      </button>
+      <button type="button" class="btn btn-link">
+        <i class="bi bi-facebook"></i>
+      </button>
+      <button type="button" class="btn btn-link">
+        <i class="bi bi-twitter"></i>
+      </button> 
+    </nav>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center gap-2 py-3 bg-blue-800 text-white">
+    <img class="bg-white rounded" src="./assets/images/logo.png?as=webp" alt="logo UOC" width="174" height="45"> 
+    <div> 
+      <p>Isaac Bejarano, 2025</p>
+      <p class="fst-normal">
+        <small> 
+        <i class="bi bi-c-circle"></i>
+        Universitat Oberta de Catalunya
+       </small>
+      </p>
+    </div> 
+  </div>
+
+    <!-- TODO: refs -->
 </footer>
+

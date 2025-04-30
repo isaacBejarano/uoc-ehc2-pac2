@@ -34,9 +34,9 @@ p {
 // Layout
 ////
 
-// Fixed-bottom element (liek footer) --> substract height of collapsible Virtual Keyboard UI in mobile
-.box-bottom {
-	position: fixed;
-  bottom: 0;
-  margin-bottom: calc(20px + env(keyboard-inset-height))
-}
+// Fixed-bottom element --> substract height of collapsible Virtual Keyboard UI in mobile
+// .box-bottom {
+// 	position: fixed;
+//   bottom: 0;
+//   margin-bottom: calc(20px + env(keyboard-inset-height))
+// }
