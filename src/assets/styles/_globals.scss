@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "./variables" as vars;
 
 ////
@@ -31,8 +32,36 @@ p {
   line-height: 1.5;
 }
 
-// Layout
+// Layout - Tablet landscape & Desktop
 ////
+
+// divide the viewport in 3 block sections (header, main, footer)
+// area classes will aplly only if nested at first level of wrapper class "layout-areas-3"
+@media (min-width: map.get(vars.$theme-breakpoints, lg)) and (min-height: map.get(vars.$theme-breakpoints, tablet-landscape-h)) {
+  .layout-areas-3 {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+
+    // max. 3 blocks (e.g. head, main, footer)
+    > .layout-area-header {
+      grid-area: header;
+    }
+
+    > .layout-area-main {
+      grid-area: main;
+    }
+
+    > .layout-area-footer {
+      grid-area: footer;
+    }
+  }
+}
 
 // Fixed-bottom element --> substract height of collapsible Virtual Keyboard UI in mobile
 // .box-bottom {

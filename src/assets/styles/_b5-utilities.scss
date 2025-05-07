@@ -1,11 +1,7 @@
-@use "./variables" as vars;
 @use "sass:map";
 
 ////
 // BOOTSTRAP UTILITY CUSTOMIZATION
-////
-
-// Colors
 ////
 
 $all-colors: map-merge-multiple(
@@ -21,6 +17,8 @@ $all-colors: map-merge-multiple(
   $cyans
 );
 
+// Added all B5 palette colors for "text", "bg" and "border" classes. Responsiveness added too.
+// Added responsiveness and more values to "w" class.
 $utilities: map.merge(
   $utilities,
   (
@@ -28,6 +26,7 @@ $utilities: map.merge(
     "color": map.merge(
         map.get($utilities, "color"),
         (
+          responsive: true,
           values: map.merge(
               map.get(map.get($utilities, "color"), "values"),
               ($all-colors)
@@ -38,6 +37,7 @@ $utilities: map.merge(
     "background-color": map.merge(
         map.get($utilities, "background-color"),
         (
+          responsive: true,
           values: map.merge(
               map.get(map.get($utilities, "background-color"), "values"),
               $all-colors
@@ -48,9 +48,23 @@ $utilities: map.merge(
     "border-color": map.merge(
         map.get($utilities, "border-color"),
         (
+          responsive: true,
           values: map.merge(
               map.get(map.get($utilities, "border-color"), "values"),
               $all-colors
+            ),
+        )
+      ),
+    // e.g. w-lg-85
+    "width": map.merge(
+        map.get($utilities, "width"),
+        (
+          responsive: true,
+          values: map.merge(
+              map.get(map.get($utilities, "width"), "values"),
+              (
+                85: 85%,
+              )
             ),
         )
       )

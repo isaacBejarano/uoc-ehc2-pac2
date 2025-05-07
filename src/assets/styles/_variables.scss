@@ -7,3 +7,17 @@
 
 $font-primary: "AlegreyaSans", Arial, sans-serif;
 $font-secondary: "Georgia", "Times New Roman", serif;
+
+// Theme Breakpoints
+////
+
+// we'll use Bootstrap's
+$theme-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  tablet-landscape-h: 800px,
+);

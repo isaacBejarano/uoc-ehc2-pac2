@@ -2,7 +2,7 @@
 // BOOTSTRAP VARIABLES OVERRIDES
 ////
 
-// Opt-in enablings
+// Opt-in Enablings
 ////
 
 // Disable default Grid Sys
@@ -11,4 +11,23 @@ $enable-grid-classes: false;
 // Enable CSS Grid Sys
 $enable-cssgrid: true;
 
-// <!-- TODO: Mira tu pregunta en el FORO: Te contestó Julián? -->
+// Website THEMING
+////
+
+$primary: #d63384; // pink-500
+$secondary: #052c65; // blue-800
+$black: #0f0f0f; // broken black
+$white: #ffffff;
+
+// Component THEMING
+////
+
+// Accordion
+$accordion-color: $white;
+$accordion-bg: $secondary;
+$accordion-icon-color: $white;
+$accordion-icon-active-color: $white;
+$accordion-button-color: $white;
+$accordion-button-active-color: $white;
+$accordion-button-active-bg: $primary;
+$accordion-border-color: $primary;

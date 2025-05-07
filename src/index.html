@@ -1,40 +1,70 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 
 <head>
   <include src="./views/head-base.html"></include>
 </head>
 
-<body class="pg-index text-blue-600">
+<body class="pg-index layout-areas-3 text-blue-600">
   <include src="./views/header.html"></include>
 
-  <!-- TODO: Mira tu pregunta en el FORO: Te contestó Julián? -->
+  <main class="layout-area-main poster position-relative w-lg-85 w-xl-75 mx-auto p-3 mt-4">
+    <p class="poster-title mb-2 me-lg-4 mt-lg-4 text-center text-lg-end h1">Ellen MacArthur</p>
+    <h1 class="poster-subtitle mb-1 mt-lg-5 text-center text-lg-start text-primary text-uppercase h5">Speaker Spotlight</h1>
 
-    <!-- <main class="container-fluid grid text-center">
-      <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-      <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-      <div class="g-col-6 g-col-md-4">.g-col-6 .g-col-md-4</div>
-    </main> -->
+    <div class="poster-divider border border-primary-subtle"></div>
 
-    <main>
-      <h1>Tycho</h1>
-      <h2>Artist Spotlight</h2>
-      <hr>
-      <p class="about">Tycho is an American ambient music project led by Scott Hansen as primary composer, songwriter and producer. Hailing from San Francisco, California, he is known as ISO50 for his photographic and design works. His music is a combination of downtempo
-    vintage-style synthesizers and ambient melodies.</p>
-  <a href="javascript:void(0)">Read more</a>
-  <img src="https://www.chenhuijing.com/demos/grids-tycho/img/tycho-band.jpg" alt="Tycho Live at Toronto">
-  <div class="location">
-    <p>10.2.2010 Toronto<br>The Drake Hotel</p>
-  </div>
-  <button type="button">Tour dates</button>
+    <!-- TODO: content Ellen MacArthur -->
+    <!-- TODO: Top 10 speakers to hire: https://sustainability-speakers.com/news/top-10-lists/official-circular-economy-speakers -->
+    <p class="poster-content d-block position-relative p-1 text-dark">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Error, aperiam quisquam.
+    Et, quos qui vitae facilis ipsa aperiam itaque quia quidem blanditiis dolore.
+    Asperiores, eligendi amet perferendis sint vitae exercitationem?
+    </p>
+
+    <a class="poster-read-more d-block mb-3" href="article.html">READ MORE</a>
+
+    <!-- TODO: real img & ref -->
+    <img class="poster-img object-fit-cover w-100 h-100 rounded-4 border border-4 border-purple-200 shadow-sm" src="https://www.chenhuijing.com/demos/grids-tycho/img/tycho-band.jpg" alt="Tycho Live at Toronto">
+    
+    <!-- TODO: Pavelló X Fira de BArcelona- BArcleona 1.6.2025 -->
+    <div class="poster-aside mt-1 mt-lg-0 d-flex align-items-center justify-content-lg-center text-purple-500 bg-lg-purple-200 rounded-start-4">
+      <p class="poster-aside-text">
+        <span class="fw-bold">The Drake Hotel</span>
+        <br>
+        <span class="text-italics">10.2.2010 Toronto</span>                
+      </p>
+    </div>
+    
+    <button class="poster-modal-opener btn position-absolute bottom-0 end-0 mb-5 me-5 mb-lg-4 me-lg-0 btn-primary text-uppercase shadow-sm"
+    type="button" data-bs-toggle="modal" data-bs-target="#indexModal">
+    Tour dates
+  </button>  
 </main>
 
+<include src="./views/footer.html"></include>
 
-
-  <include src="./views/footer.html"></include>
+<!-- TODO: Tour dates : use Table (asi usas otro UI component) -->
+  <!-- Modal -->
+  <div class="modal fade" id="indexModal" tabindex="-1" aria-labelledby="indexModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="indexModalLabel">Tour Dates</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
 </body>
 
-<!-- do not remove this line! -->
-<script type="module" src="./assets/scripts/main.js"></script>
+<script type="module" src="./assets/scripts/main.js"></script> <!-- do not remove this line! -->
 </html>
