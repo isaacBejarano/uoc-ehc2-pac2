@@ -7,6 +7,7 @@
 
 $font-primary: "AlegreyaSans", Arial, sans-serif;
 $font-secondary: "Georgia", "Times New Roman", serif;
+// For Buttons and standalone Links use .font-monospace
 
 // Theme Breakpoints
 ////
@@ -19,5 +20,6 @@ $theme-breakpoints: (
   lg: 992px,
   xl: 1200px,
   xxl: 1400px,
+  full-hd: 1920px,
   tablet-landscape-h: 800px,
 );

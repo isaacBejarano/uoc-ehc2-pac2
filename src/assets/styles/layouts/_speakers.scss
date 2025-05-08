@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../variables" as vars;
+
+////
+// SPEAKERS LAYOUT
+////
+
+.pg-speakers {
+  // .card-group already flex and flex-wrap
+  .card-group {		
+    $flex-basis: 250px; // <img:width>
+
+    > .card {
+      display: block;
+      // shrink:1 not to exceed ".card-group" container
+      // grow:1 to fill available free space in ".card-group" container
+      flex: 1 1 $flex-basis !important;
+      max-width: $flex-basis;
+
+      // re-scale img when shrinking or growing the card
+      .card-img-top {
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+}

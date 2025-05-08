@@ -18,7 +18,7 @@ $all-colors: map-merge-multiple(
 );
 
 // Added all B5 palette colors for "text", "bg" and "border" classes. Responsiveness added too.
-// Added responsiveness and more values to "w" class.
+// Added responsiveness and more values to "w" and "h" classes.
 $utilities: map.merge(
   $utilities,
   (
@@ -62,6 +62,19 @@ $utilities: map.merge(
           responsive: true,
           values: map.merge(
               map.get(map.get($utilities, "width"), "values"),
+              (
+                85: 85%,
+              )
+            ),
+        )
+      ),
+    // e.g. h-lg-85
+    "height": map.merge(
+        map.get($utilities, "height"),
+        (
+          responsive: true,
+          values: map.merge(
+              map.get(map.get($utilities, "height"), "values"),
               (
                 85: 85%,
               )

@@ -7,7 +7,6 @@
 // import SomeModule from 'some-node-module';
 
 // Import all of Bootstrap's JS
-// TODO: import individuals
 import '../../../node_modules/bootstrap/js/dist/modal';
 import '../../../node_modules/bootstrap/js/dist/collapse'; // accordion
 // import '../../../node_modules/bootstrap/js/dist/alert';

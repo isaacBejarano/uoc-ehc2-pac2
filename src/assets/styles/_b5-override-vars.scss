@@ -15,7 +15,11 @@ $enable-cssgrid: true;
 ////
 
 $primary: #d63384; // pink-500
-$secondary: #052c65; // blue-800
+$primary-subtle: #efadce;
+$secondary: #0a58ca; // blue-600
+$secondary: #084298; // blue-700
+$secondary-shade1: #052c65; // blue-800
+$secondary-shade2: #031633; // blue-900
 $black: #0f0f0f; // broken black
 $white: #ffffff;
 
@@ -23,11 +27,10 @@ $white: #ffffff;
 ////
 
 // Accordion
+$accordion-button-color: $primary-subtle;
+$accordion-icon-color: $primary-subtle;
+$accordion-button-active-bg: $primary-subtle;
+$accordion-button-active-color: $secondary-shade2;
+$accordion-icon-active-color: $secondary-shade2;
 $accordion-color: $white;
-$accordion-bg: $secondary;
-$accordion-icon-color: $white;
-$accordion-icon-active-color: $white;
-$accordion-button-color: $white;
-$accordion-button-active-color: $white;
-$accordion-button-active-bg: $primary;
-$accordion-border-color: $primary;
+$accordion-bg: $secondary-shade2;
