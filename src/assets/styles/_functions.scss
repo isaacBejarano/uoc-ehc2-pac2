@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "./variables" as vars;
+
+////
+// FUNCTIONS
+////
+
+// Get B5 breakpoints (px) - shorter syntax then mapping
+////
+@function get-breakpoint($breakpoint) {
+  @return map.get(vars.$theme-breakpoints, $breakpoint);
+}

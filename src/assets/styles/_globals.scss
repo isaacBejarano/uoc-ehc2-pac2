@@ -35,9 +35,9 @@ p {
 // Layout - Tablet landscape & Desktop
 ////
 
-// divide the viewport in 3 block sections (header, main, footer)
-// area classes will aplly only if nested at first level of wrapper class "layout-areas-3"
-@media (min-width: map.get(vars.$theme-breakpoints, lg)) and (min-height: map.get(vars.$theme-breakpoints, tablet-landscape-h)) {
+// For big wide screns divide the viewport in 3 block sections (header, main, footer). Thus the footer is always bottom.
+// grid-area will aplly only for first level nested elements inside the wrapper class "layout-areas-3"
+@media (min-width: map.get(vars.$theme-breakpoints, lg)) and (orientation: landscape) {
   .layout-areas-3 {
     display: grid;
     grid-template-areas:
@@ -62,10 +62,3 @@ p {
     }
   }
 }
-
-// Fixed-bottom element --> substract height of collapsible Virtual Keyboard UI in mobile
-// .box-bottom {
-// 	position: fixed;
-//   bottom: 0;
-//   margin-bottom: calc(20px + env(keyboard-inset-height))
-// }

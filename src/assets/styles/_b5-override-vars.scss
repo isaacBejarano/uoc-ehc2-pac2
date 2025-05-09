@@ -15,22 +15,21 @@ $enable-cssgrid: true;
 ////
 
 $primary: #d63384; // pink-500
-$primary-subtle: #efadce;
-$secondary: #0a58ca; // blue-600
 $secondary: #084298; // blue-700
-$secondary-shade1: #052c65; // blue-800
-$secondary-shade2: #031633; // blue-900
 $black: #0f0f0f; // broken black
 $white: #ffffff;
 
 // Component THEMING
 ////
 
+$theme-primary-subtle: #efadce; // primary-subtle
+$theme-secondary-shade: #031633; // blue-900
+
 // Accordion
-$accordion-button-color: $primary-subtle;
-$accordion-icon-color: $primary-subtle;
-$accordion-button-active-bg: $primary-subtle;
-$accordion-button-active-color: $secondary-shade2;
-$accordion-icon-active-color: $secondary-shade2;
+$accordion-button-color: $theme-primary-subtle;
+$accordion-icon-color: $theme-primary-subtle;
+$accordion-button-active-bg: $theme-primary-subtle;
+$accordion-button-active-color: $theme-secondary-shade;
+$accordion-icon-active-color: $theme-secondary-shade;
+$accordion-bg: $theme-secondary-shade;
 $accordion-color: $white;
-$accordion-bg: $secondary-shade2;

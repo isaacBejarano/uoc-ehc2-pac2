@@ -1,21 +1,23 @@
-@use "sass:color";
-@use "sass:map";
-@use "../variables" as vars;
+@use "../functions" as funs;
 
 ////
 // POSTER LAYOUT
 ////
 
 .pg-index {
+  container: pg-index-body / inline-size;
+
   // Mobile first --> mostly styled with B5 skin classes
   ////
 
   .poster {
-    .poster-img {
+    > .poster-img {
+      width: 100%;
+      object-fit: cover;
       object-position: top;
     }
 
-    .poster-aside {
+    > .poster-aside {
       width: 40dvw;
     }
   }
@@ -23,7 +25,8 @@
   // Tablet landscape & Desktop - FALLBACK
   ////
 
-  @media (min-width: map.get(vars.$theme-breakpoints, md)) {
+  // Don't use "!important" for fallback widths and sizes here
+  @container pg-index-body (min-width: #{funs.get-breakpoint(md)}) {
     .poster {
       position: relative;
       padding-bottom: 7.5rem !important;
@@ -85,7 +88,7 @@
     }
   }
 
-  @media (min-width: map.get(vars.$theme-breakpoints, lg)) and (min-height: map.get(vars.$theme-breakpoints, tablet-landscape-h)) {
+  @container pg-index-body (min-width: #{funs.get-breakpoint(lg)}) {
     .poster {
       padding-bottom: 0.5rem !important;
 
@@ -115,7 +118,7 @@
     }
   }
 
-  @media (min-width: map.get(vars.$theme-breakpoints, xl)) {
+  @container pg-index-body (min-width: #{funs.get-breakpoint(xl)}) {
     .poster {
       > .poster-divider {
         width: 30dvw;
@@ -132,7 +135,7 @@
       }
 
       > .poster-aside {
-        bottom: 8.5dvh;
+        bottom: 12dvh;
         left: 21.2dvw;
       }
 
@@ -143,7 +146,7 @@
     }
   }
 
-  @media (min-width: map.get(vars.$theme-breakpoints, xxl)) {
+  @container pg-index-body (min-width: #{funs.get-breakpoint(xxl)}) {
     .poster {
       > .poster-title {
         padding-left: 2rem !important;
@@ -155,12 +158,11 @@
 
       > .poster-aside {
         left: 23.5dvw;
-        margin-bottom: 1rem;
       }
     }
   }
 
-  @media (min-width: map.get(vars.$theme-breakpoints, full-hd)) {
+  @container pg-index-body (min-width: #{funs.get-breakpoint(full-hd)}) {
     .poster {
       > .poster-read-more {
         margin: 0 2rem !important;
@@ -186,11 +188,11 @@
     }
   }
 
-  // Tablet landscape & Desktop
+  // Tablet landscape & Desktop - GRID
   ////
 
   @supports (display: grid) {
-    @media (min-width: map.get(vars.$theme-breakpoints, md)) {
+    @container pg-index-body (min-width: #{funs.get-breakpoint(md)}) {
       .poster {
         position: initial;
         display: grid;
@@ -258,9 +260,9 @@
       }
     }
 
-    @media (min-width: map.get(vars.$theme-breakpoints, lg)) and (min-height: map.get(vars.$theme-breakpoints, tablet-landscape-h)) {
+    @container pg-index-body (min-width: #{funs.get-breakpoint(lg)}) {
       .poster {
-        grid-template-rows: 9dvh 26dvh 9dvh 5dvh;
+        grid-template-rows: 9dvh 21dvh 9dvh 5dvh;
 
         > .poster-featured {
           margin-top: 1rem !important;
@@ -268,6 +270,10 @@
 
         > .poster-title {
           writing-mode: sideways-lr;
+        }
+
+        > .poster-divider {
+          height: 24dvh !important;
         }
 
         > .poster-content {
@@ -281,9 +287,12 @@
           margin: 2.5rem 0 0 1rem !important;
         }
 
+        > .poster-img {
+          width: 39dvw !important;
+        }
+
         > .poster-aside {
           padding: 1rem;
-          margin-right: 1rem;
         }
 
         > .poster-modal-opener {
@@ -293,9 +302,9 @@
       }
     }
 
-    @media (min-width: map.get(vars.$theme-breakpoints, xl)) {
+    @container pg-index-body (min-width: #{funs.get-breakpoint(xl)}) {
       .poster {
-        grid-template-rows: 10dvh 29dvh 10dvh 5dvh;
+        grid-template-rows: 10dvh 25dvh 10dvh 5dvh;
 
         > .poster-read-more {
           margin: 1rem !important;
@@ -306,15 +315,14 @@
         }
 
         > .poster-aside {
-          margin-right: 0.6rem;
           margin-bottom: 0.5rem;
         }
       }
     }
 
-    @media (min-width: map.get(vars.$theme-breakpoints, xxl)) {
+    @container pg-index-body (min-width: #{funs.get-breakpoint(xxl)}) {
       .poster {
-        grid-template-rows: 11dvh 28dvh 8dvh 7dvh;
+        grid-template-rows: 11dvh 24dvh 8dvh 7dvh;
 
         > .poster-title {
           padding-left: 0 !important;
@@ -327,12 +335,11 @@
 
         > .poster-read-more {
           margin: 0 2rem !important;
-          margin-top: 2rem !important;
+          margin-top: 1rem !important;
         }
 
         > .poster-aside {
           padding: 2.5rem 0;
-          margin-right: 0.7rem;
         }
 
         > .poster-modal-opener {
@@ -341,7 +348,7 @@
       }
     }
 
-    @media (min-width: map.get(vars.$theme-breakpoints, full-hd)) {
+    @container pg-index-body (min-width: #{funs.get-breakpoint(full-hd)}) {
       .poster {
         grid-template-rows: 11dvh 25dvh 11dvh 6dvh;
 

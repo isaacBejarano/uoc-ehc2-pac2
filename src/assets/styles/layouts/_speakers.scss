@@ -1,27 +1,22 @@
-@use "sass:map";
-@use "../variables" as vars;
+@use "../mixins";
+@use "../functions" as funs;
 
 ////
 // SPEAKERS LAYOUT
 ////
 
 .pg-speakers {
-  // .card-group already flex and flex-wrap
-  .card-group {
-    $flex-basis: 250px; // <img:width>
+  container: pg-speakers-body / inline-size;
+  @include mixins.b5-auto-card-group(250px);
 
-    > .card {
-      display: block;
-      // shrink:1 not to exceed ".card-group" container
-      // grow:1 to fill available free space in ".card-group" container
-      flex: 1 1 $flex-basis !important;
-      max-width: $flex-basis;
-
-      // re-scale img when shrinking or growing the card
-      .card-img-top {
-        object-fit: cover;
-        object-position: top;
-      }
+  // FX only for larger screens, since it may not be seen so easily as in mobile
+  @container pg-speakers-body (min-width: #{funs.get-breakpoint(lg)}) {
+    .featured {
+      @include mixins.sweep-bg(
+        var(--bs-card-bg),
+        var(--bs-primary-bg-subtle),
+        1.75s
+      );
     }
   }
 }
