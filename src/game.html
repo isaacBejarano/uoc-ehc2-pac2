@@ -5,13 +5,72 @@
   <include src="./views/head-base.html"></include>
 </head>
 
-<!-- TODO: refs: EMBED IT? -->
-
+<!-- FIXME: cambia nombre por video gallery -->
 <body class="pg-game layout-areas-3 text-blue-500">
   <include src="./views/header.html"></include>
-
+  
   <main class="layout-area-main position-relative w-lg-85 w-xl-75 mx-auto p-3 my-md-4">
     <h1 class="text-center mb-4 mb-lg-5">Game</h1>
+    
+    <!-- FIXME: Game is Video Gallery -->
+    <!--
+    container queries (instead of mediaqueries)        
+    Usa Container query Units        
+    Usa new color units widely available (OKLCH) / como FALLBACK de color() fun DISPLAY color mode      
+    TODO: Usa Capa Cascada -> ".featured"  
+    TODO: Usa Viewport Units (dynamic vbieport better -> dvw, dvh)     
+    -->
+    
+    <!-- TODO: :REFS -->
+    <!-- <figure class="border border-primary">
+      <div class="responsive-iframe">
+        <iframe src="https://www.youtube.com/embed/OaGp5_Sfbss?si=RfZLtYbgDHVKq7g5"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <figcaption>
+        <cite lang="en"> The true cost </cite>
+        | Tráiler oficial | Director Andrew Morgan
+      </figcaption>
+    </figure> -->
+
+    <!-- TODO: DvW here: banner con 2 anuncions publi ecologista responsive by dvw (ocupa toda la pantalla, lo partimeos en dos en screen largas) -->
+
+    <!-- TODO: rename podcasts for video-gallery -->
+    <ol class="podcasts list-unstyled">   
+
+      <li class="podcast featured border border-2 border-purple-300 rounded-4 shadow-sm">
+        <div class="podcast-thumb border border-5 border-purple-200 rounded-4"> 
+          <figure class="podcast-img border border-primary rounded-3">
+            <div class="responsive-iframe">
+              <iframe class="rounded-3"
+                width="250"
+                height="250"
+                src="https://www.youtube.com/embed/qCYkN3uQ0Vs"
+                title="Ellen MacArthur Sustainability Speaker | The Importance of Embracing a Circular Economy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>       
+            </div>        
+          </figure>
+        </div>
+        <p class="podcast-content text-black">
+          This video is being featured during the next weeks of this month.
+          It is thus also related to the featured speaker of the week and her featured article.
+          To read more about that article, click the following link:
+          <a href="article.html">Featured Article</a>            
+        </p>
+      </li>
+
+      <!-- TODO: Add all VIDEOS -->
+     
+
+    </ol>  
+
   </main>
 
   <include src="./views/footer.html"></include>

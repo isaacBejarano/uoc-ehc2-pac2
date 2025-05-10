@@ -78,6 +78,8 @@ layer(icons);
 @layer layouts {
   @import "./layouts/index";
   @import "./layouts/speakers";
+  @import "./layouts/game";
+  // @import "./layouts/article"; //  TODO:
 }
 
 /**
