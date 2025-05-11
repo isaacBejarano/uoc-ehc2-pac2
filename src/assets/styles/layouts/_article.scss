@@ -1,5 +1,46 @@
-// TODO: @container
+@use "../functions" as funs;
+
+@layer article-namespace;
 
 ////
 // FEATURED ARTICLE
 ////
+
+// WARNING: Layers are globally accessible
+@layer article-namespace {
+  .pg-article {
+    container: pg-article / inline-size;
+
+    @container pg-article (inline-size > #{funs.get-breakpoint(md)}) {
+      .dvw-md-75 {
+        width: 75dvw;
+        margin: 0 auto !important; // vs. b5_overrides.scss (h1)
+      }
+    }
+  }
+}
+
+.pg-article {
+  container: pg-article / inline-size;
+
+  .article {
+    width: 100%;
+    padding: 1rem 0;
+
+    > .article-title {
+      margin-bottom: 1.5rem;
+      background-color: palegoldenrod;
+    }
+
+    > .article-text {
+      background-color: palegreen;
+    }
+
+    @container pg-article (inline-size > #{funs.get-breakpoint(lg)}) {
+      > .article-title {
+        margin-bottom: 2.5rem;
+        background-color: goldenrod;
+      }
+    }
+  }
+}

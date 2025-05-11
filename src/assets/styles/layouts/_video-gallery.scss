@@ -1,116 +1,124 @@
-@layer skins, grid-sys;
+@layer video-gallery-namespace;
 
 ////
 // VIDEO GALLERY LAYOUT
 ////
+@layer video-gallery-namespace {
+  @layer grid-sys, skins;
 
-@layer grid-sys {
-  $imgWidth: 250px; // <img:width> HTML
-  $gap: 1rem;
+  @layer grid-sys {
+    $imgWidth: 250px; // <img:width> HTML
+    $gap: 1rem;
 
-  // Agnostic grid, can be placed in any block element nesting other block elements (div, ol, ul, dd)
-  .video-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min($imgWidth, 100%), 1fr));
-    gap: $gap;
-    container: video-gallery-container / inline-size;
-
-    > .video {
-      > .video-thumb {
-        border-bottom-right-radius: 0 !important;
-        border-bottom-left-radius: 0 !important;
-
-        > .video-img {
-          > .responsive-iframe {
-            > iframe {
-              width: 100%;
-              aspect-ratio: 16/9;
-              border-bottom-right-radius: 0 !important;
-              border-bottom-left-radius: 0 !important;
-            }
-          }
-        }
-      }
-
-      > .video-content {
-        padding: 1cqw;
-      }
-    }
-  }
-
-  // 2col --> 1 gap (sm, md)
-  @container video-gallery-container (inline-size > #{calc($imgWidth * 2 + $gap)}) {
+    // Agnostic grid, can be placed in any block element nesting other block elements (div, ol, ul, dd)
     .video-gallery {
-      .video.featured {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column: span 2;
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min($imgWidth, 100%), 1fr)
+      );
+      gap: $gap;
+      container: video-gallery-container / inline-size;
 
+      > .video {
         > .video-thumb {
-          border-top-right-radius: 0 !important;
-          border-bottom-left-radius: inherit !important;
+          border-bottom-right-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
 
           > .video-img {
             > .responsive-iframe {
               > iframe {
-                border-top-right-radius: 0 !important;
-                border-bottom-left-radius: var(
-                  --bs-border-radius-lg
-                ) !important;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // 3col --> 2 gap (lg, xl, xxl)
-  @container video-gallery-container (inline-size > #{calc($imgWidth * 3 + ($gap * 2))}) {
-    .video-gallery {
-      .video.featured {
-        grid-column: span 3;
-      }
-    }
-  }
-
-  // 4col --> 3 gap (FullHD)
-  @container video-gallery-container (inline-size > #{calc($imgWidth * 4 + ($gap * 3))}) {
-    .video-gallery {
-      .video {
-        grid-template-columns: 1fr;
-        grid-column: span 1;
-
-        > .video-thumb {
-          border-top-left-radius: var(--bs-border-radius-lg) !important;
-          border-top-right-radius: var(--bs-border-radius-lg) !important;
-
-          > .video-img {
-            > .responsive-iframe {
-              > iframe {
-                border-top-left-radius: 0.35cqw !important;
-                border-top-right-radius: 0.35cqw !important;
+                width: 100%;
+                aspect-ratio: 16/9;
+                border-bottom-right-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
               }
             }
           }
         }
 
-        &.featured {
-          grid-template-columns: 1fr;
-          grid-column: span 1;
+        > .video-content {
+          padding: 1cqw;
+        }
+      }
+    }
+
+    // 2col --> 1 gap (sm, md)
+    @container video-gallery-container (inline-size > #{calc($imgWidth * 2 + $gap)}) {
+      .video-gallery {
+        .video.featured-video {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-column: span 2;
+
           > .video-thumb {
-            border-top-left-radius: var(--bs-border-radius-lg) !important;
-            border-top-right-radius: var(--bs-border-radius-lg) !important;
-            border-bottom-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+            border-bottom-left-radius: inherit !important;
 
             > .video-img {
               > .responsive-iframe {
                 > iframe {
-                  border-top-left-radius: var(--bs-border-radius-lg) !important;
-                  border-top-right-radius: var(
+                  border-top-right-radius: 0 !important;
+                  border-bottom-left-radius: var(
                     --bs-border-radius-lg
                   ) !important;
-                  border-bottom-left-radius: 0 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 3col --> 2 gap (lg, xl, xxl)
+    @container video-gallery-container (inline-size > #{calc($imgWidth * 3 + ($gap * 2))}) {
+      .video-gallery {
+        .video.featured-video {
+          grid-column: span 3;
+        }
+      }
+    }
+
+    // 4col --> 3 gap (FullHD)
+    @container video-gallery-container (inline-size > #{calc($imgWidth * 4 + ($gap * 3))}) {
+      .video-gallery {
+        .video {
+          grid-template-columns: 1fr;
+          grid-column: span 1;
+
+          > .video-thumb {
+            border-top-left-radius: var(--bs-border-radius-lg) !important;
+            border-top-right-radius: var(--bs-border-radius-lg) !important;
+
+            > .video-img {
+              > .responsive-iframe {
+                > iframe {
+                  border-top-left-radius: 0.35cqw !important;
+                  border-top-right-radius: 0.35cqw !important;
+                }
+              }
+            }
+          }
+
+          &.featured-video {
+            grid-template-columns: 1fr;
+            grid-column: span 1;
+            > .video-thumb {
+              border-top-left-radius: var(--bs-border-radius-lg) !important;
+              border-top-right-radius: var(--bs-border-radius-lg) !important;
+              border-bottom-left-radius: 0 !important;
+
+              > .video-img {
+                > .responsive-iframe {
+                  > iframe {
+                    border-top-left-radius: var(
+                      --bs-border-radius-lg
+                    ) !important;
+                    border-top-right-radius: var(
+                      --bs-border-radius-lg
+                    ) !important;
+                    border-bottom-left-radius: 0 !important;
+                  }
                 }
               }
             }
@@ -119,37 +127,37 @@
       }
     }
   }
-}
 
-@layer skins {
-  .featured {
-    border: 3px dashed oklch(0.6 0.21 355.49) !important; // border color fallback
-    border: 3px dashed color(display-p3 0.78 0.26 0.52) !important; // border color (--bs-primary)
-    animation: ebb-and-flow 0.7s ease-in-out alternate infinite;
-  }
+  @layer skins {
+    .featured-video {
+      border: 3px dashed oklch(0.6 0.21 355.49) !important; // border color fallback
+      border: 3px dashed color(display-p3 0.78 0.26 0.52) !important; // border color (--bs-primary)
+      animation: ebb-and-flow 0.7s ease-in-out alternate infinite;
+    }
 
-  .testimonial {
-    > p {
-      &::before {
-        content: "\201C";
+    .testimonial {
+      > p {
+        &::before {
+          content: "\201C";
+        }
+        &::after {
+          content: "\201D";
+        }
       }
-      &::after {
-        content: "\201D";
+
+      + p:has(cite) {
+        text-align: right;
       }
     }
 
-    + p:has(cite) {
-      text-align: right;
-    }
-  }
-
-  // layer skins AUX
-  @keyframes ebb-and-flow {
-    0% {
-      translate: 0 0;
-    }
-    100% {
-      translate: 0 -0.5dvh;
+    // layer skins AUX
+    @keyframes ebb-and-flow {
+      0% {
+        translate: 0 0;
+      }
+      100% {
+        translate: 0 -0.5dvh;
+      }
     }
   }
 }

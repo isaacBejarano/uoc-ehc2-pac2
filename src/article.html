@@ -10,8 +10,25 @@
 <body class="pg-article layout-areas-3 text-blue-500">
   <include src="./views/header.html"></include>
 
-  <main class="layout-area-main position-relative w-lg-85 w-xl-75 mx-auto p-3 my-md-4">
-    <h1 class="text-center mb-4 mb-lg-5">Article</h1>
+  <!-- <main class="layout-area-main position-relative w-lg-85 w-xl-75 mx-auto p-3 my-md-4"> -->
+  <main class="layout-area-main position-relative my-md-4 full-w">
+    <!-- 
+      [TODO:] ordena HTML ma so menos como en el wireframe
+      [TODO:] min. 4 <p>
+        [TODO:] min. 2 <img>
+        [TODO:] CSS (a llista o blockquote o altra)
+        [TODO:] CSS -> :has() + :is() || :where() 
+        -->
+        <!-- TODO: Content:
+        https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/overview
+      https://www.ellenmacarthurfoundation.org/articles/circular-ish-embracing-the-messy-reality-of-circular-economy-innovation -->
+        
+    <article class="article">    
+      <h1 class="article-title text-center">Article</h1>
+      <p class="article-text dvw-md-75 text-black">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ducimus aliquam natus doloribus rerum, non architecto quae, quia neque ipsum quas accusantium tempore totam soluta est rem blanditiis similique facere.
+      </p>
+    </article>
   </main>
 
   <include src="./views/footer.html"></include>

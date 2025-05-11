@@ -11,7 +11,7 @@
 
   // FX only for larger screens, since it may not be seen so easily as in mobile
   @container pg-speakers-body (min-width: #{funs.get-breakpoint(lg)}) {
-    .featured {
+    .speaker-featured {
       @include mixins.sweep-bg-v(
         var(--bs-card-bg),
         var(--bs-primary-bg-subtle),
