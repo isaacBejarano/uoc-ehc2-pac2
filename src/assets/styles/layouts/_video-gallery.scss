@@ -1,12 +1,12 @@
-@layer video-gallery-namespace;
+@layer pg-video-gallery;
 
 ////
 // VIDEO GALLERY LAYOUT
 ////
-@layer video-gallery-namespace {
-  @layer grid-sys, skins;
+@layer pg-video-gallery {
+  @layer video-gallery, video-skins;
 
-  @layer grid-sys {
+  @layer video-gallery {
     $imgWidth: 250px; // <img:width> HTML
     $gap: 1rem;
 
@@ -128,7 +128,7 @@
     }
   }
 
-  @layer skins {
+  @layer video-skins {
     .featured-video {
       border: 3px dashed oklch(0.6 0.21 355.49) !important; // border color fallback
       border: 3px dashed color(display-p3 0.78 0.26 0.52) !important; // border color (--bs-primary)

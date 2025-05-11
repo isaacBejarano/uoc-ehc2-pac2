@@ -5,29 +5,199 @@
   <include src="./views/head-base.html"></include>
 </head>
 
-<!-- TODO: refs -->
-
 <body class="pg-article layout-areas-3 text-blue-500">
   <include src="./views/header.html"></include>
 
-  <!-- <main class="layout-area-main position-relative w-lg-85 w-xl-75 mx-auto p-3 my-md-4"> -->
-  <main class="layout-area-main position-relative my-md-4 full-w">
-    <!-- 
-      [TODO:] ordena HTML ma so menos como en el wireframe
-      [TODO:] min. 4 <p>
-        [TODO:] min. 2 <img>
-        [TODO:] CSS (a llista o blockquote o altra)
-        [TODO:] CSS -> :has() + :is() || :where() 
-        -->
-        <!-- TODO: Content:
-        https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/overview
-      https://www.ellenmacarthurfoundation.org/articles/circular-ish-embracing-the-messy-reality-of-circular-economy-innovation -->
-        
-    <article class="article">    
-      <h1 class="article-title text-center">Article</h1>
-      <p class="article-text dvw-md-75 text-black">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ducimus aliquam natus doloribus rerum, non architecto quae, quia neque ipsum quas accusantium tempore totam soluta est rem blanditiis similique facere.
+  <main class="layout-area-main position-relative mb-md-4">        
+    <article class="article dvw-100">    
+      <header class="article-header">
+        <h1 class="article-title">What is a circular economy?</h1>
+        <p class="article-lema dvw-md-75 dvw-lg-50">
+          In our current economy, we take materials from the Earth, make products from them, and eventually throw them away as waste - the process is linear.
+          In a circular economy, by contrast, we stop waste being produced in the first place.
+        </p>
+        <p class="article-author dvw-75 dvw-md-30">
+          <span class="author-name">Joe Iles</span>
+          <span class="author-role">
+            Design Lead,
+            <a href="https://www.ellenmacarthurfoundation.org/" target="_blank">
+              Ellen MacArthur Foundation
+            </a>
+          </span>                             
+          <span>
+            <time datetime="2025-09-29"> 29 September 2025</time>
+          </span>
+        </p>
+      </header>
+
+      <figure class="article-figure dvw-md-75 dvw-lg-60">
+        <img
+          src="./assets/images/circular_economy_diagram.webp"
+          alt="The butterfly diagram explaining the circular economy visualy"
+          width="250"
+          height="250">
+        <figcaption>
+          <a href="https://images.ctfassets.net/isq5xwjfoz2m/3v3SXaPbb5iKAFF4sSMClk/920fc7076d12cf6c2b4478c2d91dfbdc/Butterfly_Diagram.webp"
+            target="_blank">
+            The butterfly diagram: visualising the circular economy
+          </a> 
+          <span class="text-black">
+            | Ellen MacArthur Foundation
+          </span>
+        </figcaption>
+      </figure>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        The <strong> circular economy </strong>
+        is a system where 
+        <strong> materials never become waste and nature is regenerated. </strong>
+        <q>
+          In a circular economy, products and materials are kept in circulation through processes like maintenance,
+          reuse, refurbishment, remanufacture, recycling, and composting.
+          The circular economy tackles climate change and other global challenges, like biodiversity loss, waste, and pollution,
+          by decoupling economic activity from the consumption of finite resources.
+        </q>
       </p>
+
+      <div class="article-text dvw-md-75 dvw-lg-60">
+        <p>
+          <b>The circular economy is based on three principles, driven by design:</b>
+        </p>
+        <ol> 
+          <li>
+            <b>Eliminate waste and pollution</b>
+          </li>
+          <li>
+            <b>Circulate products and materials (at their highest value)</b>
+          </li>
+          <li>
+            <b>Regenerate nature</b>
+          </li>
+        </ol>
+      </div>
+
+      <h2 class="article-heading">
+        Eliminate waste and pollution
+      </h2>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        By shifting our mindset, we can treat waste as a design flaw. In a <strong> circular economy</strong>,
+        a specification for any design is that the materials re-enter the economy at the end of their use.
+        By doing this, we take the linear take-make-waste system and make it circular.      
+      </p>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        Many products could be circulated by being maintained, shared, reused, repaired, refurbished, remanufactured, and, as a last resort, recycled.
+        Food and other biological materials that are safe to return to nature can regenerate the land, fuelling the production of new food and materials.
+        With a focus on design, we can eliminate the concept of waste.
+      </p>  
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        By adopting this <strong>first principle of the circular economy</strong>
+        , we can begin to close the materials loop and turn off the tap that is currently sending a torrent of waste into landfills and incinerators every day.
+        With an emphasis on upstream design, we can stop waste before it is even created.
+      </p>  
+      
+      <h2 class="article-heading">
+        Circulate products and materials
+      </h2>
+      
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        Many companies are adopting reusable packaging as a way to keep materials in circulation.
+        <a href="https://exploreloop.com/en/" target="_blank">
+          <strong>Loop</strong>
+        </a>
+        , which operates in France, the UK, and the US, is a reuse platform that offers big brand products, such as Tide detergent and Heinz Ketchup, in reusable packaging.
+        When a container is empty, there is no need for the customer to clean or sort it. It is either collected from their home or can be dropped off at participating stores.
+        The containers are then professionally cleaned, refilled, and used again.
+      </p>      
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        By adopting <strong>the second principle of the circular economy</strong>
+        - circulate products and materials - we retain the value embedded in products and the materials they are made from.
+        By doing so, we keep <strong>finite materials</strong> in the economy and out of the environment, and safely return biodegradable materials to the earth.
+      </p>      
+      
+      <h2 class="article-heading">
+        Regenerate nature
+      </h2>
+      
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        In addition to the food system, there are other benefits for natural ecosystems by adopting a circular economy. By keeping products and materials in use, less land is required for sourcing virgin raw materials, e.g. from mines. If we gradually decouple economic activity from material extraction by keeping materials in circulation after use, more and more land can be returned to nature and rewilding can happen.
+      </p>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        By adopting the third <strong>principle of the circular economy</strong> - regenerate nature - we can shift our priorities.
+        No longer should our focus be simply on doing less harm to the environment, but on how we can actively improve it.
+        If the economy follows circular principles, the more we do, the greater the benefits.
+      </p>
+
+      <h2 class="article-heading">
+        The journey to a circular economy
+      </h2>
+    
+      <figure class="article-figure dvw-md-75 dvw-lg-60">
+        <img
+          src="./assets/images/process_of_design.svg?as=webp"
+          alt="The butterfly diagram explaining the circular economy visualy"
+          width="250"
+          height="250">
+        <figcaption>
+          <a href="https://thedesignsquiggle.com/" target="_blank">
+            thedesignsquiggle.com
+          </a> 
+          <span class="text-black">
+            | The Process of Design Squiggle by Damien Newman
+          </span>
+        </figcaption>
+      </figure>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        This line represents a journey. It's a tangled mess of progress and setbacks, experimental dead ends,
+        flashes of inspiration that fell flat, and dogged determination that eventually paid off.
+        While on the wiggly path, an innovator might be a long way from that big picture vision of a circular economy
+        that they read about on a website, in which nothing is wasted. But, even so, they tried. 
+        They're playing their part in moving towards a circular economy. 
+      </p>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        How do we encourage creatives on this turbulent journey to keep going?
+        How do we prevent them from feeling discouraged by failures and setbacks?
+        How can we nurture passion in exploring possibilities, rather than seeing circular economy as simply a compliance exercise,
+        or an administrative chore? 
+      </p>
+      
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        Perhaps we can have a conversation about circular economy design and innovation that embraces getting it almost right,
+        or taking steps towards the big beautiful vision of a circular economy without undermining that vision.
+        Rather than saying 'you got it wrong', we could say 'good start,
+        you're on the right track, but keep going - there's more to this circular economy idea'. 
+      </p>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        This mindset is the context that can make all our individual efforts make sense.
+        The circular economy transition becomes less about the flashy pilots or one off-innovations and instead becomes an approach that unites people,
+        that is bigger than one person, bigger than one department. A journey that the whole organisation is on. 
+     </p>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        I've got a term for this attitude. I call it <b>'circular-ish'.</b>
+     </p>
+
+      <p class="article-text dvw-md-75 dvw-lg-60">
+        Circular-ish is the bit in the middle. It's the stage we're at now - where things get real.
+        It's where we translate the circular economy from premise to pragmatism. 
+        Circular-ish is an attitude or posture, one that reflects the dynamic nature of this transition.
+        It's a commitment you make to yourself, your colleagues, and to society, that means:
+        <q>
+          we've started, we're trying, and we're committed to doing better 
+        </q>.
+        Circular-ish isn't a technical term. It's not an excuse for bad design.
+        If you're thinking 'Great! I can do the bare minimum', shrug your shoulders and say "don't hate me, it's circular-ish!",
+        then I've missed the mark. And I say to you, you can do better.
+        Embrace the state of circular-ish, and learn to love the messy reality of circular economy innovation.
+     </p>
+
     </article>
   </main>
 

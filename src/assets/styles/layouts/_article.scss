@@ -1,45 +1,131 @@
 @use "../functions" as funs;
 
-@layer article-namespace;
+@layer pg-article-layout-utils;
 
 ////
 // FEATURED ARTICLE
 ////
 
-// WARNING: Layers are globally accessible
-@layer article-namespace {
+
+// Layout Utils
+@layer pg-article-layout-utils {
   .pg-article {
     container: pg-article / inline-size;
+
+    .dvw-75 {
+      width: 75dvw;
+      margin: 0 auto !important; // vs. b5_overrides.scss (h1)
+    }
 
     @container pg-article (inline-size > #{funs.get-breakpoint(md)}) {
       .dvw-md-75 {
         width: 75dvw;
         margin: 0 auto !important; // vs. b5_overrides.scss (h1)
       }
+
+      .dvw-md-30 {
+        width: 30dvw;
+        margin: 0 auto !important; // vs. b5_overrides.scss (h1)
+      }
+    }
+
+    @container pg-article (inline-size > #{funs.get-breakpoint(lg)}) {
+      .dvw-lg-60 {
+        width: 60dvw;
+        margin: 0 auto !important; // vs. b5_overrides.scss (h1)
+      }
+      .dvw-lg-50 {
+        width: 50dvw;
+        margin: 0 auto !important; // vs. b5_overrides.scss (h1)
+      }
     }
   }
 }
 
+// Component .article
 .pg-article {
   container: pg-article / inline-size;
 
+  // Component
+  ////
+
   .article {
     width: 100%;
-    padding: 1rem 0;
+    padding: 0;
 
-    > .article-title {
-      margin-bottom: 1.5rem;
-      background-color: palegoldenrod;
+    > .article-header {
+      padding: 1rem 1rem 2rem;
+      text-align: center;
+      background-color: var(--bs-primary-bg-subtle);
+
+      > .article-lema {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+      }
+
+      > .article-author {
+        margin-top: 1rem;
+        border: 1px solid var(--bs-primary);
+        border-width: 1px 0 0;
+
+        .author-name {
+          font-family: monospace;
+          font-size: 1rem;
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+
+        > :has(a, time) {
+          display: block;
+        }
+      }
+    }
+
+    > .article-figure {
+      padding: 0 1rem 1.5rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      figcaption {
+        text-align: center;
+      }
+    }
+
+    > .article-text-color {
+      color: var(--bs-black);
     }
 
     > .article-text {
-      background-color: palegreen;
+      padding: 0 1rem 1.5rem !important;
+      color: var(--bs-black);
+    }
+
+    // Skins
+    ////
+
+    :where(.article-title, .article-heading) {
+      margin-bottom: 1rem;
+    }
+
+    > .article-heading {
+      padding: 1rem 0;
+      text-align: center;
+      background-color: var(--bs-primary-bg-subtle);
+    }
+
+    @container pg-article (inline-size > #{funs.get-breakpoint(md)}) {
+      > .article-header {
+        padding-top: 2.5rem;
+      }
     }
 
     @container pg-article (inline-size > #{funs.get-breakpoint(lg)}) {
-      > .article-title {
-        margin-bottom: 2.5rem;
-        background-color: goldenrod;
+      :where(.article-title, .article-heading) {
+        margin-bottom: 1.5rem !important;
       }
     }
   }
