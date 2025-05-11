@@ -9,10 +9,10 @@
  * Import variables
  */
 
-@import url("./_font-face.scss");
-@import url("./_variables.scss");
-@import url("./_reset.scss");
-@import url("./_globals.scss");
+@import "./font-face";
+@import "./variables";
+@import "./reset";
+@import "./globals";
 
 /**
 * Import npm dependencies
@@ -69,7 +69,7 @@
 // BOOTSTRAP ICONS
 ////
 
-@import url("../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css");
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 
 /**
  * Import layouts
