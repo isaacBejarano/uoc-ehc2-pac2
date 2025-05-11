@@ -46,8 +46,6 @@
   @import "../../../node_modules/bootstrap/scss/grid";
   @import "../../../node_modules/bootstrap/scss/helpers";
   // more UI components
-  // @import "../../../node_modules/bootstrap/scss/button-group";
-  // @import "../../../node_modules/bootstrap/scss/navbar";
   @import "../../../node_modules/bootstrap/scss/buttons"; // UI compo (used .btn)
   @import "../../../node_modules/bootstrap/scss/nav"; // UI compo [used .nav]
   @import "../../../node_modules/bootstrap/scss/transitions"; // for carousel, dropdowns...
@@ -56,6 +54,9 @@
   @import "../../../node_modules/bootstrap/scss/accordion"; // UI compo (used .accordion)
   @import "../../../node_modules/bootstrap/scss/list-group"; // UI compo (used .list-group)
   @import "../../../node_modules/bootstrap/scss/card"; // UI compo (used .card)
+  // FIXME: clean unused
+  // @import "../../../node_modules/bootstrap/scss/button-group";
+  // @import "../../../node_modules/bootstrap/scss/navbar";
 
   // generate utilities
   @import "b5-utilities";
@@ -78,8 +79,8 @@ layer(icons);
 @layer layouts {
   @import "./layouts/index";
   @import "./layouts/speakers";
-  @import "./layouts/game";
-  // @import "./layouts/article"; //  TODO:
+  @import "./layouts/video-gallery";
+  @import "./layouts/article";
 }
 
 /**

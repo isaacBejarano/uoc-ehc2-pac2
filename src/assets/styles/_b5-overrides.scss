@@ -5,6 +5,24 @@
 // Paragraph, Headings, Address
 ////
 
-:is(p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, address, figure) {
+:is(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  p,
+  address,
+  figure,
+  hr,
+  blockquote
+) {
   margin: 0;
 }
